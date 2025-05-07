@@ -27,7 +27,7 @@ const ProductCard = ({ product, onUpdate, onDelete }) => {
     e.preventDefault();
     setIsUpdating(true);
     try {
-      const response = await axios.put(`http://localhost:5000/api/products/${product.id}`, {
+      const response = await axios.put(`https://mini-e-commerce-platform-with-two-tabs.onrender.com/api/products/${product.id}`, {
         ...formData,
         price: parseFloat(formData.price)
       });
@@ -47,7 +47,7 @@ const ProductCard = ({ product, onUpdate, onDelete }) => {
   const handleDelete = async () => {
     setIsDeleting(true);
     try {
-      const response = await axios.delete(`http://localhost:5000/api/products/${product.id}`);
+      const response = await axios.delete(`https://mini-e-commerce-platform-with-two-tabs.onrender.com/api/products/${product.id}`);
       if (response.data.success) {
         toast.success('Product deleted successfully!');
         onDelete(product.id);

@@ -12,7 +12,7 @@ const MyProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products');
+      const response = await axios.get('https://mini-e-commerce-platform-with-two-tabs.onrender.com/api/products');
       if (response.data.success) {
         setProducts(response.data.data);
       }
@@ -31,7 +31,7 @@ const MyProducts = () => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/products/search?q=${encodeURIComponent(searchQuery)}&type=${searchType}`);
+      const response = await axios.get(`https://mini-e-commerce-platform-with-two-tabs.onrender.com/api/products/search?q=${encodeURIComponent(searchQuery)}&type=${searchType}`);
       if (response.data.success) {
         setProducts(response.data.data);
       }
